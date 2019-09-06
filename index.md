@@ -1,3 +1,9 @@
-# Hello world
+{% for  post in site.posts reversed %}
 
-This is just a test
+## [{{ post.title }}]({{ post.url }})
+
+{{ post.excerpt}}
+
+[Read more]({{ post.url }})
+
+{% endfor %}
