@@ -8,8 +8,8 @@ Unity has released a lot of news lately about new graphics pipelines in Unity, a
 Right now, there are three options:
 
 - The old stack
-- The high definition render pipeline, HDRP
-- The universal render pipeline, UWRP (formerly light weight render pipeline, LWRP)
+- The high definition render pipeline/HDRP
+- The universal render pipeline (formerly lightweight render pipeline/LWRP)
 
 So which one should you use?
 
@@ -25,7 +25,7 @@ Sounds like the right thing to use if you're developing games to be played on  a
 
 It doesn't seem to work with WebGL, however, and  this is really unfortunate. I really enjoy making games for game jams and having a WebGL build is crucial in order to get people to actually play your game.
 
-## UWRP
+## Universal render pipeline
 
 In Unity's own words, it "runs everywhere Unity runs", which is great. It means it works with WebGL, and it means it works on mobile, which is really great for porting.
 
