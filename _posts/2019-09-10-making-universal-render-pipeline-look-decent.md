@@ -2,8 +2,8 @@
 title: Making Universal Render Pipeline Look Decent
 ---
 In this tutorial, I'll start with an empty project/scene, add a couple
-of basic objects, and step by step take advantage of it's features to go from
-underwhelming to decent.
+of basic objects, make sure we're using the univeral render pipeline and step
+by step go from quite underwhelming to decent.
 
 Start by launching Unity hub and Create a project using the `Universal RP Template` template.
 
@@ -72,7 +72,7 @@ than we started out with... Let's fix it!
 Now, the first thing that really stands out to me, is the jagged edges of
 *almost everything*. The reason for this, is that anti-aliasing is disabled by
 default. In fact a lot of the default quality settings are rather weird, and/or
-underwhelming quality-wise.
+underwhelming.
 
 Open the `UniversalRenderPipelineAsset` you created earlier and edit it in the
 inspector. Under the `Quality` section, change `Anti Aliasing (MSAA)` from
@@ -143,7 +143,7 @@ Go ahead and select everything in the scene except the camera and, tick the
 
 I think this is starting to look decent! There are still lots of things to do,
 but this should cover the most important areas in order to have something that
-doesn't look like it was made for mobile :)
+doesn't look like a two decades old console game.
 
 I you liked this post, please let me know and I might turn this into a
 tutorial series!
