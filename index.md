@@ -1,4 +1,4 @@
-{% for  post in site.posts reversed %}
+{% for  post in site.posts %}
 
 ## [{{ post.title }}]({{ post.url }})
 
