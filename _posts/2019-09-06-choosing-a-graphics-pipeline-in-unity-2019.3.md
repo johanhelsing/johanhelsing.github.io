@@ -32,3 +32,8 @@ In Unity's own words, it "runs everywhere Unity runs", which is great. It means 
 Also, while it used to be called LWRP, it seems to have a lot of advanced features, including shader graph support, reflection probes, post-processing effects and more.
 
 I'm going to stick to this one for now.
+
+EDIT: Actually, after writing this, I found a [comparison table in the official
+documentation](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@7.0/manual/universalrp-builtin-feature-comparison.html),
+which answers a lot of questions whether you'd want to use
+the old pipeline or the universal.
