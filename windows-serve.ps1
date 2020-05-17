@@ -1,0 +1,1 @@
+wsl bash -i -c "bundle exec jekyll serve"
