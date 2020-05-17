@@ -111,6 +111,8 @@ itch:
 
 That's it. Commit and push to GitLab, and you should hopefully get a mail from itch.io after a while saying the builds are available :)
 
+<img src="/assets/gitlab-ci-builds-suceeded.png" alt="gitlab ci all builds succeeded" style="zoom:50%;" />
+
 ## Nicer versions
 
 As a bonus if you don't like having only the git sha1 as the version, you can add the following job. And would like to have something based on the latest git tag. You can add a new versioning job:
