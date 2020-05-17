@@ -1,6 +1,7 @@
 ---
 layout: post
 author: johan
+typora-root-url: ..
 ---
 
 I set up this using Jekyll. Don't know how I'll go about adding comments....

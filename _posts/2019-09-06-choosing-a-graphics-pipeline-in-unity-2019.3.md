@@ -1,6 +1,7 @@
 ---
 title: Choosing a graphics pipeline in Unity 2019.3
 author: johan
+typora-root-url: ..
 ---
 
 Unity has released a lot of news lately about new graphics pipelines in Unity, and it isn't always obvious which one you should choose. While Unity likes to brag about the benefits of each pipeline, they don't really do a good job about explaining the limitations.
