@@ -1,3 +1,4 @@
+{% if page.github_comment_id %}
 <h2>Comments:</h2>
 
 <div id='github-comments-list'>
@@ -7,8 +8,9 @@
 <script type='text/javascript'>
     // var url = "https://github.com/johanhelsing/johanhelsing.github.io/issues/" + {{ $.Params.ghcommentid }}
     // var api_url = "https://api.github.com/repos/johanhelsing/johanhelsing.github.io/issues/" + {{ $.Params.ghcommentid }} + "/comments"
-    var url = "https://github.com/johanhelsing/johanhelsing.github.io/issues/" + {{ page.github_comment_id }}
-    var api_url = "https://api.github.com/repos/johanhelsing/johanhelsing.github.io/issues/" + {{ page.github_comment_id }} + "/comments"
+    //var url = "https://github.com/johanhelsing/johanhelsing.github.io/issues/" + {{ page.github_comment_id }}
+    var url = `https://github.com/johanhelsing/johanhelsing.github.io/issues/${  {{ page.github_comment_id }} }`;
+    var api_url = `https://api.github.com/repos/johanhelsing/johanhelsing.github.io/issues/${ {{ page.github_comment_id }} }/comments`
     document.addEventListener("DOMContentLoaded", function () {
         var req = new XMLHttpRequest();
         req.addEventListener("load", function() {
@@ -47,3 +49,4 @@
         req.send();
     });
 </script>
+{% endif %}
