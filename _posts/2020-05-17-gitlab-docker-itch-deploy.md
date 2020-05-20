@@ -29,8 +29,8 @@ Without further ado, here are the steps:
    * The entire `./ci` folder
    * `.gitlab-ci.yml`
    * `Assets/Scripts/Editor/BuildCommand.cs` (needs to be at this particular path in your repo too)
-
 2. Open up `.gitlab-cy.yml` and make the modifications you need. You might want to:
+   * Change `BUILD_NAME` to something sensible.
    * Edit the `image:` field at the top to set the unity version you want. I left it at `image: gableroux/unity3d:2019.3.7f1` as that was the version I was on.
    * Disable the targets you don't need, either by deleting or commenting them out, or you can add a new property `when: manual` so they don't trigger automatically. I disabled `pages` (deploy WebGL build as GitLab page), `build-ios-xcode`, `build-and-deploy-ios`, `build-android`, `deploy-android`, `build-StandaloneLinux64-il2cpp`, `build-StandaloneOSXUniversal`. This left me with just tests, Windows, MacOS, Linux and WebGL being built automatically.
 3. Commit your changes and push to your GitLab repo.
