@@ -2,6 +2,7 @@
 title: Automatically building and deploying Unity applications to itch.io
 author: johan
 typora-root-url: ..
+github_comment_id: 3
 ---
 
 When doing game jams, you can easily waste a lot of time fixing one bug, manually build for four or more platforms, upload each to itch only to find there is another critical bug and you have to start all over again. In this post, I'll explain how to set up a continuous deployment so all of this will be done automatically when you push to your git master branch.

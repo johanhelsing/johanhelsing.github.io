@@ -2,6 +2,7 @@
 title: Making Universal Render Pipeline Look Decent
 author: johan
 typora-root-url: ..
+github_comment_id: 2
 ---
 In this tutorial, I'll start with an empty project/scene, add a couple
 of basic objects, make sure we're using the univeral render pipeline and step
