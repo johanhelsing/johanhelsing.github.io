@@ -1,0 +1,49 @@
+<h2>Comments:</h2>
+
+<div id='github-comments-list'>
+    Loading comments...
+</div>
+
+<script type='text/javascript'>
+    // var url = "https://github.com/johanhelsing/johanhelsing.github.io/issues/" + {{ $.Params.ghcommentid }}
+    // var api_url = "https://api.github.com/repos/johanhelsing/johanhelsing.github.io/issues/" + {{ $.Params.ghcommentid }} + "/comments"
+    var url = "https://github.com/johanhelsing/johanhelsing.github.io/issues/" + {{ page.github_comment_id }}
+    var api_url = "https://api.github.com/repos/johanhelsing/johanhelsing.github.io/issues/" + {{ page.github_comment_id }} + "/comments"
+    document.addEventListener("DOMContentLoaded", function () {
+        var req = new XMLHttpRequest();
+        req.addEventListener("load", function() {
+            console.log(this.responseText);
+            var content = "Comments are not open for this post yet.";
+
+            if (this.status === 200) {
+                content = "<p><a href='" + url + "'>Post a comment on GitHub</a></p>";
+                var data = JSON.parse(this.responseText);
+                data.map(comment => {
+                    var date = new Date(comment.created_at);
+                    content += "<section class='github-comment' style='background-color:rgba(220,220,220); padding: 1.2rem 1rem 0.5rem; margin: 1rem'>";
+
+                    content += "<div class='github-comment-header' style='display:flex'>";
+
+                    content += "<img src='" + comment.user.avatar_url + "' width='24px'>";
+
+                    content += "<div style='padding-left:0.5em'><a href='" + comment.user.html_url + "'>" + comment.user.login + "</a>";
+                    content += " posted at ";
+                    content += "<time><em>" + date.toLocaleString('en-IN', { hour12: false }) + "</em></time></div>";
+
+                    content += "</div>"; // header
+
+                    content += "<div class='github-comment-contents' style='margin:1rem'>";
+                    content += comment.body_html;
+                    content += "</div>";
+
+                    content += "</section>";
+                });
+            }
+
+            document.getElementById("github-comments-list").innerHTML = content;
+        });
+        req.open("GET", api_url);
+        req.setRequestHeader("Accept", "application/vnd.github.v3.html+json");
+        req.send();
+    });
+</script>
