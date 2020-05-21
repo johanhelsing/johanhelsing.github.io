@@ -146,4 +146,4 @@ itch:
     - master
 ```
 
-Now you should have nicer versions, but maybe a convoluted in order just to call `git describe --tag`. if you have a better suggestion let me know in the comments.
+Now you should have nicer versions, but maybe a convoluted in order just to call `git describe --tag`. If you have a better suggestion, please let me know in the comments :)
