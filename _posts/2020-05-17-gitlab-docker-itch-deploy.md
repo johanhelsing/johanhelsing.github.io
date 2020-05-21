@@ -116,7 +116,7 @@ That's it. Commit and push to GitLab, and you should hopefully get a mail from i
 
 ## Nicer versions
 
-As a bonus if you don't like having only the git sha1 as the version, you can add the following job. To have something based on the latest git tag (you need to have at least one tagged commit). You can add a new versioning job:
+As a bonus: if you don't like having only the git sha1 as the version and want to have something based on the latest git tag (you need to have at least one tagged commit), you can add a new versioning job:
 
 ```yml
 version:
@@ -145,3 +145,5 @@ itch:
   only:
     - master
 ```
+
+It works, but maybe a convoluted just to call `git describe --tag`, if you have a better suggestion let me know in the comments.
