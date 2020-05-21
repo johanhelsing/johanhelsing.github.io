@@ -5,17 +5,17 @@ typora-root-url: ..
 github_comment_id: 3
 ---
 
-When doing game jams, you can easily waste a lot of time fixing one bug, manually build for four or more platforms, upload each to itch only to find there is another critical bug and you have to start all over again. In this post, I'll explain how to set up a continuous deployment so all of this will be done automatically when you push to your git master branch.
+When doing game jams, you can easily waste a lot of time fixing one bug, manually build for four or more platforms, upload each to itch only to find there is another critical bug and you have to start all over again. In this post, I'll explain how to set up continuous deployment so all of this will be done automatically when you push to your git master branch.
 
-At first glance, it seemed like Unity Cloud build would be the obvious solution... However it costs $9 a month, and I only do this as a hobby and I don't depending paid services if I don't have to. Also I haven't checked if it would integrate well with Itch.
+At first glance, it seemed like Unity Cloud build would be the obvious solution... However it costs $9 a month, and I only do this as a hobby and I don't like depending paid services if I don't have to. Also I haven't checked if it would integrate well with Itch.
 
 I decided to go for a docker-based solution, and started looking for images. After a quick search it seemed pretty clear that [gitlab.com/gableroux/unity3d](https://gitlab.com/gableroux/unity3d) was the most well-maintained and popular solution.
 
-There seems to be two common ways to set it up, either using gitlab-ci, which is what [the official example](https://gitlab.com/gableroux/unity3d-gitlab-ci-example) does, or using travis and github as [explained by Carlos Castro on his blog](https://gitlab.com/gableroux/unity3d-gitlab-ci-example).
+There seems to be two common ways to set it up, either using gitlab-ci, which is what [the official example](https://gitlab.com/gableroux/unity3d-gitlab-ci-example) does, or using Travis and GitHub as [explained by Carlos Castro on his blog](https://gitlab.com/gableroux/unity3d-gitlab-ci-example).
 
-I wanted to do it the most official way to minimize the amount of corner-cases and workaround I would run into, so I went with gitlab-ci, which means you should host your repo on gitlab.com or another gitlab instance.
+I wanted to do it the most official way to minimize the amount of corner-cases and workaround I would run into, so I went with gitlab-ci, which means you should host your repo on gitlab.com or another GitLab instance.
 
-While the official documentation for setting up was good enough, I found it a bit scattered (i.e. some steps are in the output log of a docker container etc. some info was in the example readme and some in gitlab issues and some in the gitlab docker image readme. Also I was unfamiliar with GitLab CI, which meant I had to look up a lot of things along the way.
+While the official documentation for setting up was good enough, I found it a bit scattered (i.e. some steps are in the output log of a docker container etc. and some info was in the example readme and some in gitlab issues and some in the gitlab docker image readme. Also I was unfamiliar with GitLab CI, which meant I had to look up a lot of things along the way.
 
 This is why I decided to write this guide, so you (and future me) don't have to search all over the place, when all you want to do is quickly automate deployment for a new jam game.
 
@@ -116,7 +116,7 @@ That's it. Commit and push to GitLab, and you should hopefully get a mail from i
 
 ## Nicer versions
 
-As a bonus if you don't like having only the git sha1 as the version, you can add the following job. And would like to have something based on the latest git tag. You can add a new versioning job:
+As a bonus if you don't like having only the git sha1 as the version, you can add the following job. To have something based on the latest git tag (you need to have at least one tagged commit). You can add a new versioning job:
 
 ```yml
 version:
@@ -131,7 +131,7 @@ version:
       - ./version.txt
 ```
 
-And change your itch job as follows to use `./version.txt` instead:
+And change your itch job in `.gitlab-ci.yml` as follows to use `./version.txt` instead:
 
 ```yml
 itch:
