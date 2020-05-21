@@ -76,9 +76,9 @@ Your project should now be ready to be built and tested. Try committing and push
 
 ## Get Butler credentials
 
-1. Download butler
-1. Run butler login from the command line
-1. Copy the contents of `~/.config/itch/butler_creds` to a new GitLab CI variable `BUTLER_API_KEY`, mask and protect it.
+1. Download [butler](https://fasterthanlime.itch.io/butler)
+1. Run `butler login` from the command line, and authorize it in the browser.
+1. Copy the contents of `~/.config/itch/butler_creds` to a new GitLab CI variable, `BUTLER_API_KEY`, mask and protect it.
 
 ## Add an Itch deployment job
 
@@ -125,7 +125,7 @@ version:
     entrypoint: [""]
   stage: build_and_test
   script:
-    - git describe --tag > ./version.txt # will be something like "1.0.0-32-g040c782"
+    - git describe --tag > ./version.txt # will generate something like "1.0.0-32-g040c782"
   artifacts:
     paths:
       - ./version.txt
@@ -146,4 +146,4 @@ itch:
     - master
 ```
 
-It works, but maybe a convoluted just to call `git describe --tag`, if you have a better suggestion let me know in the comments.
+Now you should have nicer versions, but maybe a convoluted in order just to call `git describe --tag`. if you have a better suggestion let me know in the comments.
