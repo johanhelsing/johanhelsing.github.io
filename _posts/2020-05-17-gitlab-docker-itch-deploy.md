@@ -52,7 +52,7 @@ Unity activation is a bit of a hassle, and it's different depending on whether y
 First you need to get the the license activation file: `unity-*.ulf`
   1. Go to your GitLab project's home page and then `Settings`->`CI / CD`-> `Variables`) and add the following variables:
 
-      * `UNITY_USER` with contents set to your email
+      * `UNITY_USERNAME` with contents set to your email
       * `UNITY_PASSWORD` with your password
         Mark both as masked and protected.
 
