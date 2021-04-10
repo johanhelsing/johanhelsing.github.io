@@ -1,3 +1,9 @@
 theme: jekyll-theme-architect
 title: Johan Helsing
 description: Game dev etc.
+plugins:
+  - jekyll-analytics
+jekyll_analytics:
+  Plausible:
+    domain: "johanhelsing.github.io"
+    source: "https://plausible.banan.land/js/plausible.js"
