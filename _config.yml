@@ -2,3 +2,6 @@ theme: jekyll-theme-architect
 title: Johan Helsing
 description: Game dev etc.
 repository: johanhelsing/johanhelsing.github.io
+url: "https://johanhelsing.github.io"
+plugins:
+  - jekyll-sitemap
